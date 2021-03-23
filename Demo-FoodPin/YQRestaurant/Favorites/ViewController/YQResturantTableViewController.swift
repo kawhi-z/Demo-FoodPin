@@ -20,6 +20,6 @@ class YQResturantTableViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Resturant"
         self.view.backgroundColor = .systemBlue
-        
+        ///
     }
 }
