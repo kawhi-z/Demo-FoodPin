@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512E111E2612261A0049F7E7 /* YQRestaurantDetailIconTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512E111D2612261A0049F7E7 /* YQRestaurantDetailIconTextCell.swift */; };
+		512E1121261226340049F7E7 /* YQReataurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512E1120261226340049F7E7 /* YQReataurantDetailMapCell.swift */; };
+		512E1124261226410049F7E7 /* YQReataurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512E1123261226410049F7E7 /* YQReataurantDetailTextCell.swift */; };
 		51BCD70725E1FC1C00079E5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BCD70625E1FC1C00079E5D /* AppDelegate.swift */; };
 		51BCD70925E1FC1C00079E5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BCD70825E1FC1C00079E5D /* SceneDelegate.swift */; };
 		51BCD70B25E1FC1C00079E5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BCD70A25E1FC1C00079E5D /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		512E111D2612261A0049F7E7 /* YQRestaurantDetailIconTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YQRestaurantDetailIconTextCell.swift; path = "../../../../../../kawhi/Demo-FoodPin/Demo-FoodPin/YQRestaurant/Favorites/View/YQRestaurantDetailIconTextCell.swift"; sourceTree = "<group>"; };
+		512E1120261226340049F7E7 /* YQReataurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YQReataurantDetailMapCell.swift; path = "../../../../../../kawhi/Demo-FoodPin/Demo-FoodPin/YQRestaurant/Favorites/View/YQReataurantDetailMapCell.swift"; sourceTree = "<group>"; };
+		512E1123261226410049F7E7 /* YQReataurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YQReataurantDetailTextCell.swift; path = "../../../../../../kawhi/Demo-FoodPin/Demo-FoodPin/YQRestaurant/Favorites/View/YQReataurantDetailTextCell.swift"; sourceTree = "<group>"; };
 		51BCD70325E1FC1C00079E5D /* Demo-FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-FoodPin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BCD70625E1FC1C00079E5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51BCD70825E1FC1C00079E5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				51CD7E4925F4AE030024977D /* YQRestaurtantView.swift */,
+				512E1120261226340049F7E7 /* YQReataurantDetailMapCell.swift */,
+				512E1123261226410049F7E7 /* YQReataurantDetailTextCell.swift */,
 				51CD9F6D25F6FDF200A5FC25 /* YQRestaurantCellTableViewCell.swift */,
+				512E111D2612261A0049F7E7 /* YQRestaurantDetailIconTextCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				512E1121261226340049F7E7 /* YQReataurantDetailMapCell.swift in Sources */,
 				51CD7E3625F4A6360024977D /* YQResturantTableViewController.swift in Sources */,
 				51CD7E4A25F4AE030024977D /* YQRestaurtantView.swift in Sources */,
 				51BCD70B25E1FC1C00079E5D /* ViewController.swift in Sources */,
@@ -242,10 +252,12 @@
 				51CD9F6425F6FDB300A5FC25 /* FoodPin.xcdatamodeld in Sources */,
 				51CD9F7325F6FE0200A5FC25 /* Restaurant.swift in Sources */,
 				51CD9F7225F6FE0200A5FC25 /* RateModel.swift in Sources */,
+				512E1124261226410049F7E7 /* YQReataurantDetailTextCell.swift in Sources */,
 				51BCD70725E1FC1C00079E5D /* AppDelegate.swift in Sources */,
 				51CD9F6A25F6FDDE00A5FC25 /* YQResturantAboutViewController.swift in Sources */,
 				51CD9F6725F6FDD400A5FC25 /* YQDiscoverViewController.swift in Sources */,
 				51BCD70925E1FC1C00079E5D /* SceneDelegate.swift in Sources */,
+				512E111E2612261A0049F7E7 /* YQRestaurantDetailIconTextCell.swift in Sources */,
 				51CD7E6325F6FA8C0024977D /* Macros copy.swift in Sources */,
 				51CD7E5E25F4CCAD0024977D /* YQRestautrantDetailViewController.swift in Sources */,
 			);
