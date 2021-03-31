@@ -35,6 +35,7 @@ class YQRestaurtantView: UIView , UITableViewDataSource, UITableViewDelegate{
         mainTableView.dataSource = self
         mainTableView.register(YQRestaurantCellTableViewCell.self, forCellReuseIdentifier: celldentifiter)
 //        mainTableView.separatorStyle = .none
+//        mainTableView.stle
 
 
         self.addSubview(mainTableView)

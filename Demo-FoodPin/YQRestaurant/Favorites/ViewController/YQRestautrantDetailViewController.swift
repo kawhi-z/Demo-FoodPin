@@ -32,6 +32,7 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
         let header = UIImageView()
         header.contentMode = .scaleAspectFill
         header.layer.masksToBounds = true
+        return header
     }()
     
     private lazy var headerMaskView: UIView = {
@@ -143,10 +144,45 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
         self.view.setNeedsLayout()
     }
 
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: YQRestaurantDetailIconTextCell.self), for: indexPath) as! YQRestaurantDetailIconTextCell
+            cell.render(withData: "phone", detailText: restaurant.phone!)
+            cell.selectionStyle = .none
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: YQRestaurantDetailIconTextCell.self), for: indexPath) as! YQRestaurantDetailIconTextCell
+            cell.render(withData: "map", detailText: restaurant.location!)
+            cell.selectionStyle = .none
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: YQReataurantDetailTextCell.self), for: indexPath) as! YQReataurantDetailTextCell
+            cell.render(withData: restaurant.summary!)
+            cell.selectionStyle = .none
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: YQReataurantDetailMapCell.self), for: indexPath) as! YQReataurantDetailMapCell
+//            cell.
+            cell.selectionStyle = .none
+            return cell
+        default:
+            fatalError("Failed to instantiate the table view cell for detail view controoler")
+        }
+
+    }
+    
+    
     @objc func handleClickRateButton() {
         
     }
-    
+        
 }
 
 

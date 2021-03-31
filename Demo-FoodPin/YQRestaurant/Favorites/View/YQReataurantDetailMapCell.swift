@@ -18,6 +18,8 @@ private struct DetailMapCellConstants {
 
 class YQReataurantDetailMapCell: UITableViewCell {
 
+    var restaurant: RestaurantMO!
+    
     private lazy var titleLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -83,6 +85,34 @@ class YQReataurantDetailMapCell: UITableViewCell {
         return base
     }
 
+    func configure(restaurant: RestaurantMO) {
+        self.restaurant = restaurant
+        let geoCoder = CLGeocoder()
+        
+        print(restaurant.location!)
+        
+        geoCoder.geocodeAddressString(restaurant.location!, completionHandler: {placemarks, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let placemarks = placemarks {
+                let placemark = placemarks[0]
+                
+                // Add annnotation
+                let annotation = MKPointAnnotation()
+                
+                if let location = placemark.location {
+                    annotation.coordinate = location.coordinate
+                    self.mapView.addAnnotation(annotation)
+                    
+                    let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 250, longitudinalMeters: 250)
+                    self.mapView.setRegion(region, animated: false)
+                }
+            }
+        })
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
