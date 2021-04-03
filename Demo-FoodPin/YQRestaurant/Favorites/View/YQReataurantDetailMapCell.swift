@@ -61,9 +61,9 @@ class YQReataurantDetailMapCell: UITableViewCell {
     override func layoutSubviews() {
         titleLabel.frame = CGRect(x: DetailMapCellConstants.leftMarginOfLabel, y: DetailMapCellConstants.topMarginOfLabel, width: ScreenWidth() - DetailMapCellConstants.leftMarginOfLabel * 2, height: titleLabel.height())
 
-        separatorView.frame = CGRect(x: titleLabel.left() , y: titleLabel.right() + DetailMapCellConstants.marginOfTitleAndSeparator, width: ScreenWidth() - DetailMapCellConstants.leftMarginOfLabel * 2, height: 0.5)
+        separatorView.frame = CGRect(x: titleLabel.left() , y: titleLabel.bottom() + DetailMapCellConstants.marginOfTitleAndSeparator, width: ScreenWidth() - DetailMapCellConstants.leftMarginOfLabel * 2, height: 0.5)
         
-        mapView.frame = CGRect(x: 0, y: separatorView.bottom() + DetailMapCellConstants.marginOfTitleAndSeparator, width: ScreenWidth(), height: DetailMapCellConstants.heightOfMapView)
+        mapView.frame = CGRect(x: 0, y: titleLabel.bottom() + DetailMapCellConstants.marginOfTitleAndSeparator, width: ScreenWidth(), height: DetailMapCellConstants.heightOfMapView)
     }
     
     @objc private func handleClickMapView() {
@@ -112,6 +112,20 @@ class YQReataurantDetailMapCell: UITableViewCell {
                 }
             }
         })
+    }
+    
+    /// 类方法返回cell的高
+    class func heightForMapCell() -> CGFloat {
+        var height: CGFloat = 0
+        
+        let titleLabel = UILabel(frame: CGRect.zero)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        titleLabel.text = "HOW TO GET HERE"
+        titleLabel.sizeToFit()
+        titleLabel.frame = CGRect(x: DetailMapCellConstants.leftMarginOfLabel, y: DetailMapCellConstants.topMarginOfLabel, width: ScreenWidth() - DetailMapCellConstants.leftMarginOfLabel * 2, height: titleLabel.height())
+        height = titleLabel.bottom() + DetailMapCellConstants.marginOfTitleAndSeparator * 2 + 0.5 + DetailMapCellConstants.heightOfMapView + 12
+        
+        return height
     }
     
     override func awakeFromNib() {

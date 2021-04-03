@@ -87,7 +87,7 @@ class YQRestaurtantView: UIView , UITableViewDataSource, UITableViewDelegate{
     }
     
     func currentNavigationController() ->UINavigationController {
-        if let appDelegate = (UIApplication.shared.delegate as? SceneDelegate) {
+        if let appDelegate = (self.window?.windowScene?.delegate as? SceneDelegate) {
             return appDelegate.baseTabBarController.selectedViewController as? UINavigationController ?? UINavigationController()
         }
         return UINavigationController()

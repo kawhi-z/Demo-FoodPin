@@ -53,7 +53,17 @@ class YQReataurantDetailTextCell: UITableViewCell {
         return labelSize.height + DetailTextCellConstants.topMarginOfLabel * 2
     }
     
-    
+    /// 类方法返回cell的高
+    class func heightForTextCell(restaurant: RestaurantMO) -> CGFloat {
+        
+        let label = UILabel(frame: CGRect.zero)
+        label.text = restaurant.summary!
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.numberOfLines = 0
+        let labelSize = label.sizeThatFits(CGSize(width: ScreenWidth() - DetailTextCellConstants.leftMarginOfLabel * 2, height: CGFloat(MAXFLOAT)))
+        
+        return labelSize.height + DetailTextCellConstants.topMarginOfLabel * 2
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

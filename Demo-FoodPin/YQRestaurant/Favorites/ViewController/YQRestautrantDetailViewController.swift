@@ -32,6 +32,9 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
         let header = UIImageView()
         header.contentMode = .scaleAspectFill
         header.layer.masksToBounds = true
+        if let restaurantImage = restaurant.image {
+            header.image = UIImage(data: restaurantImage as Data)
+        }
         return header
     }()
     
@@ -67,7 +70,7 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
     private lazy var heartImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "heart-tick")
-        image.isHidden = !restaurant.isVisited
+//        image.isHidden = !restaurant.isVisited
         return image
     }()
     
@@ -99,7 +102,15 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
     }
     
     func configNav() {
+        navigationItem.largeTitleDisplayMode = .never
         
+        navigationController?.isNavigationBarHidden = false
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.hidesBottomBarWhenPushed = true
     }
     
     func initDetailTableView() {
@@ -112,7 +123,7 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
         headerView.addSubview(headerMaskView)
         headerView.addSubview(typeLabel)
         headerView.addSubview(heartImageView)
-//        heartImageView.isHidden = !restaurant.isVisited
+        heartImageView.isHidden = !restaurant.isVisited
         headerView.addSubview(nameLabel)
         refreshRatingImageView(rateImage: restaurant.rating!)
         headerView.addSubview(ratingImageView)
@@ -178,6 +189,35 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
 
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return YQRestaurantDetailIconTextCell.heightForIconTextCell(image: "photo", text: restaurant.phone!)
+        case 1:
+            return YQRestaurantDetailIconTextCell.heightForIconTextCell(image: "map", text: restaurant.location!)
+        case 2:
+            return YQReataurantDetailTextCell.heightForTextCell(restaurant: restaurant)
+        case 3:
+            return YQReataurantDetailMapCell.heightForMapCell()
+        default:
+            fatalError("Failed to instantiate the table view cell for detail view controoler")
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        typeLabel.sizeToFit()
+        nameLabel.sizeToFit()
+        
+        detailTableView.frame = CGRect(x: 0, y: 0, width: ScreenWidth(), height: ScreenHeight())
+        headerView.frame = CGRect(x: 0, y: 0, width: ScreenWidth(), height: 350)
+        headerMaskView.frame = headerView.bounds
+        heartImageView.frame = CGRect(x: typeLabel.frame.maxX + 6, y: 0, width: 15, height: 15)
+        typeLabel.frame = CGRect(x: Constants.nameLabelX, y: headerView.frame.height - 15 - typeLabel.frame.height, width: typeLabel.frame.width + 10, height: typeLabel.frame.height)
+        nameLabel.frame = CGRect(x: Constants.nameLabelX, y: typeLabel.frame.origin.y - 6 - nameLabel.frame.height, width: headerView.frame.width - Constants.nameLabelX - Constants.nameLabelX, height: nameLabel.frame.height)
+        
+        ratingImageView.frame = CGRect(x: ScreenWidth() - ratingImageView.width(), y: headerView.height() - ratingImageView.height(), width: ratingImageView.width(), height: ratingImageView.height())
+        
+    }
     
     @objc func handleClickRateButton() {
         

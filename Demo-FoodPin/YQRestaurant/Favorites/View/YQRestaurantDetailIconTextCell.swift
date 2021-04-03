@@ -58,6 +58,25 @@ class YQRestaurantDetailIconTextCell: UITableViewCell {
         setNeedsLayout()
     }
     
+    /// 类方法返回cell的高
+    class func heightForIconTextCell(image: String, text: String) -> CGFloat {
+        let iconImageView = UIImageView(frame: CGRect.zero)
+        iconImageView.image = UIImage(named: image)
+        iconImageView.sizeToFit()
+        iconImageView.frame = CGRect(x: Constants.leftMarginOfIconImage, y: 0, width: iconImageView.width(), height: iconImageView.height())
+
+        
+        let detailLabel = UILabel(frame: CGRect.zero)
+        detailLabel.font = UIFont.systemFont(ofSize: 14)
+        detailLabel.text = text
+        detailLabel.numberOfLines = 0
+        let labelSize = detailLabel.sizeThatFits(CGSize(width: ScreenWidth() - iconImageView.right() - Constants.marginOfLabel * 2, height: CGFloat(MAXFLOAT)))
+        
+        
+        return labelSize.height + Constants.topMarginOfLabel * 2
+    }
+    
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
