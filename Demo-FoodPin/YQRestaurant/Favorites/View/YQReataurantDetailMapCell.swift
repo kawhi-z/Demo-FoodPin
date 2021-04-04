@@ -39,7 +39,7 @@ class YQReataurantDetailMapCell: UITableViewCell {
         map.isScrollEnabled = false
         map.isPitchEnabled = false
         map.isZoomEnabled = false
-        map.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(handleClickMapView)))
+        map.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleClickMapView)))
         return map
     }()
     
@@ -66,8 +66,10 @@ class YQReataurantDetailMapCell: UITableViewCell {
         mapView.frame = CGRect(x: 0, y: titleLabel.bottom() + DetailMapCellConstants.marginOfTitleAndSeparator, width: ScreenWidth(), height: DetailMapCellConstants.heightOfMapView)
     }
     
-    @objc private func handleClickMapView() {
-        
+    @objc func handleClickMapView(recognizer: UITapGestureRecognizer) {
+        let mapVC = YQRestaurantMapViewController()
+        mapVC.restaurant = restaurant
+        self.currentViewController()?.present(mapVC, animated: true, completion: nil)
     }
     
     private func currentViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) ->UIViewController? {
@@ -85,8 +87,8 @@ class YQReataurantDetailMapCell: UITableViewCell {
         return base
     }
 
-    func configure(restaurant: RestaurantMO) {
-        self.restaurant = restaurant
+    public func render(withData Restaurant: RestaurantMO) {
+        self.restaurant = Restaurant
         let geoCoder = CLGeocoder()
         
         print(restaurant.location!)

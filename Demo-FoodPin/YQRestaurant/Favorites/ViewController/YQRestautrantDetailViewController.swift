@@ -180,8 +180,8 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: YQReataurantDetailMapCell.self), for: indexPath) as! YQReataurantDetailMapCell
-//            cell.
             cell.selectionStyle = .none
+            cell.render(withData: restaurant)
             return cell
         default:
             fatalError("Failed to instantiate the table view cell for detail view controoler")
