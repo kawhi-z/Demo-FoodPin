@@ -12,7 +12,7 @@ private struct Constants {
 
 import UIKit
 
-class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, YQRestaurantReviewControllDelegate{
 
     public var restaurant: RestaurantMO!
     
@@ -142,7 +142,7 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
         rateButton.backgroundColor = .red
         rateButton.layer.masksToBounds = true
         rateButton.layer.cornerRadius = rateButton.frame.height * 0.5
-        rateButton.addTarget(self, action: #selector(handleClickRateButton), for: .touchUpInside)
+        rateButton.addTarget(self, action: #selector(handleRateButton), for: .touchUpInside)
         footerView.addSubview(rateButton)
         
         detailTableView.tableFooterView = footerView
@@ -219,10 +219,21 @@ class YQRestautrantDetailViewController: UIViewController, UITableViewDataSource
         
     }
     
-    @objc func handleClickRateButton() {
-        
+    @objc func handleRateButton() {
+        let reviewVC = YQRestaurantReviewViewController()
+        reviewVC.restaurant = restaurant
+        reviewVC.delegate = self
+        self.present(reviewVC, animated: true, completion: nil)
     }
+ 
+    func handleRateButtonInReviewVC(rate: RateModel) {
+        restaurant.rating = rate.image
+        refreshRatingImageView(rateImage: rate.image)
         
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            appDelegate.saveContext()
+        }
+    }
 }
 
 

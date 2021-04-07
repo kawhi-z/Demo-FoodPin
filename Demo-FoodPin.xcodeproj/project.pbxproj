@@ -17,6 +17,7 @@
 		51BCD70E25E1FC1C00079E5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BCD70C25E1FC1C00079E5D /* Main.storyboard */; };
 		51BCD71025E1FC1D00079E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BCD70F25E1FC1D00079E5D /* Assets.xcassets */; };
 		51BCD71325E1FC1D00079E5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51BCD71125E1FC1D00079E5D /* LaunchScreen.storyboard */; };
+		51C099C4261D2BB30016C18F /* YQRestaurantReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C099C3261D2BB30016C18F /* YQRestaurantReviewViewController.swift */; };
 		51CD7E3625F4A6360024977D /* YQResturantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD7E3525F4A6360024977D /* YQResturantTableViewController.swift */; };
 		51CD7E4A25F4AE030024977D /* YQRestaurtantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD7E4925F4AE030024977D /* YQRestaurtantView.swift */; };
 		51CD7E5E25F4CCAD0024977D /* YQRestautrantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD7E5D25F4CCAD0024977D /* YQRestautrantDetailViewController.swift */; };
@@ -43,6 +44,7 @@
 		51BCD70F25E1FC1D00079E5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51BCD71225E1FC1D00079E5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51BCD71425E1FC1D00079E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51C099C3261D2BB30016C18F /* YQRestaurantReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YQRestaurantReviewViewController.swift; path = "../../../../../../kawhi/Demo-FoodPin/Demo-FoodPin/YQRestaurant/Favorites/ViewController/YQRestaurantReviewViewController.swift"; sourceTree = "<group>"; };
 		51CD7E3525F4A6360024977D /* YQResturantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YQResturantTableViewController.swift; sourceTree = "<group>"; };
 		51CD7E4925F4AE030024977D /* YQRestaurtantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQRestaurtantView.swift; sourceTree = "<group>"; };
 		51CD7E5D25F4CCAD0024977D /* YQRestautrantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YQRestautrantDetailViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				51CD7E3525F4A6360024977D /* YQResturantTableViewController.swift */,
 				51B9F49426195E1100D4986C /* YQRestaurantMapViewController.swift */,
 				51CD7E5D25F4CCAD0024977D /* YQRestautrantDetailViewController.swift */,
+				51C099C3261D2BB30016C18F /* YQRestaurantReviewViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				51CD9F6425F6FDB300A5FC25 /* FoodPin.xcdatamodeld in Sources */,
 				51CD9F7325F6FE0200A5FC25 /* Restaurant.swift in Sources */,
 				51CD9F7225F6FE0200A5FC25 /* RateModel.swift in Sources */,
+				51C099C4261D2BB30016C18F /* YQRestaurantReviewViewController.swift in Sources */,
 				512E1124261226410049F7E7 /* YQReataurantDetailTextCell.swift in Sources */,
 				51BCD70725E1FC1C00079E5D /* AppDelegate.swift in Sources */,
 				51CD9F6A25F6FDDE00A5FC25 /* YQResturantAboutViewController.swift in Sources */,

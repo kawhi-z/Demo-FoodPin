@@ -39,9 +39,6 @@ func NavigationBarHeight() -> CGFloat {
     return SystemVersion() >= 12.0 ? 50.0 : 44.0
 }
 
-//func ToolBarHeight() -> CGFloat {
-////    return IsLandscape() ? (IsiPhoneX ? 51 : QMUIHelper.is55InchScreen() ? 44 : 32) : (IsiPhoneX ? 83 :44)
-//}
 
 func VCHeightWithoutNavigationBar() -> CGFloat {
     return ScreenHeight() - NavigationBarHeight()
@@ -61,38 +58,6 @@ func Font(_ size: CGFloat) -> UIFont {
 func Font(_ size: CGFloat, _ weight: UIFont.Weight) -> UIFont {
     return UIFont.systemFont(ofSize: size, weight: weight)
 }
-
-//func DynamicFont(_ size: CGFloat) -> UIFont {
-//    return UIFont.qmui_dynamicSystemFont(ofSize: size, weight: QMUIFontWeight.normal, italic: false)
-//}
-//
-//func DynamicFont(_ size: CGFloat, _ weight: QMUIFontWeight) -> UIFont {
-//    return UIFont.qmui_dynamicSystemFont(ofSize: size, weight: weight, italic: false)
-//}
-//
-//func Color(_ key: String) -> UIColor {
-//    return FMThemeManager.dynamicColor(withKey: key)
-//}
-//
-//func Color(_ key: String, _ a: CGFloat) -> UIColor {
-//    return FMThemeManager.dynamicColor(withKey: key, alpha: a)
-//}
-//
-//func AbsoluteColor(_ key: String) -> UIColor {
-//    return FMThemeManager.absoluteColor(withKey: key)
-//}
-//
-//func AbsoluteColor(_ key: String, _ a: CGFloat) -> UIColor {
-//    return FMThemeManager.absoluteColor(withKey: key, alpha: a)
-//}
-//
-//func RGB(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> UIColor {
-//    return FMThemeManager.dynamicColor(withRed: r, green: g, blue: b, alpha: 1.0)
-//}
-//
-//func RGBA(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {
-//    return FMThemeManager.dynamicColor(withRed: r, green: g, blue: b, alpha: a)
-//}
 
 func AbsoluteRGBA(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {
     return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
@@ -157,24 +122,6 @@ func Label(font: UIFont?, textColor: UIColor?, textAlignment: NSTextAlignment?) 
     return v
 }
 
-/// 根据常用属性获取一个 UIButton 对象
-//func Button(font: UIFont?, normalTextColor: UIColor?, normalBackgroundColor: UIColor?, highlightedBackgroundColor: UIColor?) -> UIButton {
-//    let v: UIButton = UIButton(type: .custom)
-//    v.setTitleColor(normalTextColor, for: .normal)
-//    if font != nil {
-//        v.titleLabel?.font = font!
-//    }
-//    if normalBackgroundColor != nil {
-//        v.setBackgroundImage(UIImage.qmui_image(with: normalBackgroundColor), for: .normal)
-//    }
-//    if highlightedBackgroundColor != nil {
-//        v.setBackgroundImage(UIImage.qmui_image(with: normalBackgroundColor), for: .highlighted)
-//    }
-//
-//    return v
-//}
-
-
 
 // MARK: GCD
 /// 在主线程同步执行 block
@@ -201,28 +148,6 @@ func DispatchMainAsyncAfter(_ afterInterval: Double, _ cb:@escaping ()->()) {
 }
 
 
-
-// MARK: Log
-/// Log
-//func LogError(_ msg: String) {
-//    QZLogger.instance()?.log(Int(QZLogLevel_Error.rawValue), file: #file, func: #function, line: #line, string: msg)
-//}
-//
-//func LogWarning(_ msg: String) {
-//    QZLogger.instance()?.log(Int(QZLogLevel_Warning.rawValue), file: #file, func: #function, line: #line, string: msg)
-//}
-//
-//func LogDebug(_ msg: String) {
-//    QZLogger.instance()?.log(Int(QZLogLevel_Debug.rawValue), file: #file, func: #function, line: #line, string: msg)
-//}
-//
-//func LogInfo(_ msg: String) {
-//    QZLogger.instance()?.log(Int(QZLogLevel_Info.rawValue), file: #file, func: #function, line: #line, string: msg)
-//}
-//
-//func SafeAreaInsets() -> UIEdgeInsets {
-//    QMUIHelper.safeAreaInsetsForIPhoneX()
-//}
 
 // MARK: ViewExtension
 extension UIView {
